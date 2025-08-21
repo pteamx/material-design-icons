@@ -21,7 +21,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Берём версию из тега или из ручного ввода
       - name: Derive version
         run: |
           if [[ "${{ github.ref }}" == refs/tags/* ]]; then
@@ -30,7 +29,6 @@ jobs:
             echo "PACKAGE_VERSION=${{ inputs.version }}" >> $GITHUB_ENV
           fi
 
-      # Проверка: версия должна быть задана
       - name: Ensure version is set
         run: |
           if [[ -z "${PACKAGE_VERSION}" ]]; then
@@ -38,7 +36,6 @@ jobs:
             exit 1
           fi
 
-      # Тянем секцию из CHANGELOG.md (## [v?X.Y.Z] ... до следующего ## [)
       - name: Read CHANGELOG
         id: changelog
         run: |
