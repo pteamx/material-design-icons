@@ -44,15 +44,12 @@ Thumbs.db
 # =========================
 *.log
 *.tmp
-
-# Если есть корневой мета-файл:
 meta.json
 
-# tarball'ы от npm pack
+# tarball'
 *.tgz
 /dist/*.tgz
 
-# локальные env (если появятся)
 .env
 .env.*
 
