@@ -1,0 +1,8 @@
+his package includes icons from Google Material Symbols.
+Source: https://github.com/google/material-design-icons/tree/master/symbols
+License: Apache License 2.0 (see LICENSE).
+
+Packaged as a webfont by pteamx.
+Modifications: build scripts and CSS class prefixes (mdi, mdi-rounded, mdi-sharp).
+
+"Google" and "Material" are trademarks of Google LLC.

@@ -1,0 +1,36 @@
+{
+  "name": "@pteamx/mdi",
+  "version": "4.0.0",
+  "description": "Webfont build of Google Material Symbols (official), with mdi, mdi-rounded, and mdi-sharp class prefixes.",
+  "license": "Apache-2.0",
+  "author": "pteamx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pteamx/material-design-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pteamx/material-design-icons/issues"
+  },
+  "homepage": "https://github.com/pteamx/material-design-icons#readme",
+  "keywords": [
+    "icons",
+    "material",
+    "google",
+    "symbols",
+    "webfont",
+    "css",
+    "mdi"
+  ],
+  "style": "css/mdi.css",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "css",
+    "fonts",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md"
+  ]
+}

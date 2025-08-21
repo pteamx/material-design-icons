@@ -1,0 +1,55 @@
+name: GitHub Release (no npm)
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (e.g. 4.0.0). If empty and tag push, taken from tag."
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Берём версию из тега или из ручного ввода
+      - name: Derive version
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            echo "PACKAGE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+          else
+            echo "PACKAGE_VERSION=${{ inputs.version }}" >> $GITHUB_ENV
+          fi
+
+      # Проверка: версия должна быть задана
+      - name: Ensure version is set
+        run: |
+          if [[ -z "${PACKAGE_VERSION}" ]]; then
+            echo "PACKAGE_VERSION is empty. Provide a tag vX.Y.Z or pass 'version' input." >&2
+            exit 1
+          fi
+
+      # Тянем секцию из CHANGELOG.md (## [v?X.Y.Z] ... до следующего ## [)
+      - name: Read CHANGELOG
+        id: changelog
+        run: |
+          echo "BODY<<EOF" >> $GITHUB_OUTPUT
+          awk 'BEGIN{p=0} /^## \[v?'"${PACKAGE_VERSION}"'\]/{p=1; print; next} /^## \[/{if(p) exit} p{print}' CHANGELOG.md >> $GITHUB_OUTPUT || true
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.PACKAGE_VERSION }}
+          name: v${{ env.PACKAGE_VERSION }}
+          body: ${{ steps.changelog.outputs.BODY }}
+          generate_release_notes: true

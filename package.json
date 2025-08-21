@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "mdi-root",
+  "version": "4.0.0",
+  "description": "Dev workspace for building the MI webfont",
+  "license": "MIT",
+   "type": "module",
+  "scripts": {
+    "download:svg": "node scripts/index.js download svg",
+    "download:font": "node scripts/index.js download font",
+    "download:metadata": "node scripts/index.js download metadata",
+    "delete:svg": "node scripts/index.js delete svg",
+    "generate:types": "node scripts/index.js generate types",
+    "generate:meta": "node scripts/generate-meta.js",
+    "generate:css": "node scripts/generate-css.js",
+    "generate:html": "node scripts/generate-html.js",
+    "build:font": "node scripts/build-font.js",
+    "clean:duplicates": "node scripts/remove-duplicate-fills.js",
+    "build:all": "npm run clean:duplicates && npm run generate:meta && npm run build:font && npm run generate:css",
+    "clean": "rm -rf dist",
+    "build": "node scripts/build-font.js && node scripts/generate-html.js && node scripts/generate-meta.js",
+    "prepare:pkg": "node scripts/prepare-publish.js",
+   "release": "npm run prepare:pkg && npm publish --access public"
+  },
+  "devDependencies": {
+    "del": "^8.0.0",
+    "fontkit": "^2.0.4",
+    "got": "^14.4.7",
+    "handlebars": "^4.7.8",
+    "is-svg": "^6.1.0",
+    "node-fetch": "^3.3.2",
+    "svg-path-bounding-box": "^1.0.4",
+    "svgpath": "^2.6.0",
+    "svgo": "^4.0.0",
+    "webfont": "^11.2.26",
+    "webfonts-generator": "^0.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  }
+}
