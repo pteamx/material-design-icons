@@ -1,4 +1,4 @@
-# MDI Webfont (`mdi`)
+# Material Design Icons (Symbol) Webfont (`mdi`)
 
 [![npm version](https://img.shields.io/npm/v/@pteamx/mdi.svg?color=blue)](https://www.npmjs.com/package/@pteamx/mdi)
 [![npm downloads](https://img.shields.io/npm/dm/@pteamx/mdi.svg?color=green)](https://www.npmjs.com/package/@pteamx/mdi)

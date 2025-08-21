@@ -1,10 +1,9 @@
 {
   "private": true,
   "name": "mdi-root",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Dev workspace for building the MI webfont",
   "license": "MIT",
-   "type": "module",
   "scripts": {
     "download:svg": "node scripts/index.js download svg",
     "download:font": "node scripts/index.js download font",
@@ -24,11 +23,13 @@
   },
   "devDependencies": {
     "del": "^8.0.0",
+    "fantasticon": "^3.0.0",
     "fontkit": "^2.0.4",
     "got": "^14.4.7",
     "handlebars": "^4.7.8",
     "is-svg": "^6.1.0",
     "node-fetch": "^3.3.2",
+    "primeicons": "^7.0.0",
     "svg-path-bounding-box": "^1.0.4",
     "svgpath": "^2.6.0",
     "svgo": "^4.0.0",

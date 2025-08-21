@@ -51,8 +51,7 @@ span.mdi, span.mdi-rounded, span.mdi-sharp {
 	src: url("../fonts/mdi.eot?#iefix") format("embedded-opentype"),
 url("../fonts/mdi.woff2") format("woff2"),
 url("../fonts/mdi.woff") format("woff"),
-url("../fonts/mdi.ttf") format("truetype"),
-url("../fonts/mdi.svg#mdi") format("svg");
+url("../fonts/mdi.ttf") format("truetype");
   font-display: swap;
 }
 
