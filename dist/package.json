@@ -1,6 +1,6 @@
 {
   "name": "@pteamx/mdi",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Webfont build of Google Material Symbols (official), with mdi, mdi-rounded, and mdi-sharp class prefixes.",
   "license": "Apache-2.0",
   "author": "pteamx",

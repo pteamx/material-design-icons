@@ -52,7 +52,7 @@ span.mdi, span.mdi-rounded, span.mdi-sharp {
 url("../fonts/mdi-rounded.woff2") format("woff2"),
 url("../fonts/mdi-rounded.woff") format("woff"),
 url("../fonts/mdi-rounded.ttf") format("truetype");
-  font-display: swap;
+font-display: block;
 }
 
 .mdi-rounded {

@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "mdi-root",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Dev workspace for building the MI webfont",
   "license": "MIT",
   "scripts": {
